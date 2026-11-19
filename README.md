@@ -154,8 +154,9 @@ Additional technical details are organized in the `docs/` directory.
 | `file-permissions.md` | Ownership, permissions, and setgid |
 | `acl-configuration.md` | Default ACL configuration and testing |
 | `troubleshooting.md` | Problems, diagnosis, and corrective actions |
+| `nginx-incident-recovery.md` | Nginx outage diagnosis, root-cause analysis, and recovery |
 
-Supporting screenshots will be added to the `screenshots/` directory.
+Supporting screenshots are organized in the screenshots/ directory and provide evidence of configuration, security testing, service failures, and recovery procedures.
 
 ## Verification Evidence
 
@@ -177,14 +178,64 @@ The following screenshots document the configuration and security testing perfor
 
 ![Unauthorized access denied](screenshots/access-denied.png)
 
-## Project Status
+## Phase 4 — Nginx Service Failure & Recovery
+
+### Incident Summary
+
+Simulated an Nginx web server outage caused by an invalid configuration directive. Investigated the failure using Linux service-management and logging tools, restored the original configuration, and verified successful recovery.
+
+### Failure Evidence
+
+![Nginx failed service](screenshots/nginx-failed-service.png)
+
+### Root-Cause Analysis
+
+![Nginx root-cause logs](screenshots/nginx-root-cause.png)
+
+### Successful Recovery
+
+![Nginx successful recovery](screenshots/nginx-successful-recovery.png)
+
+### Technical Documentation
+
+[Read the complete Nginx incident report](docs/nginx-incident-recovery.md)
+
+### Skills Demonstrated
+
+- Linux service management with systemd
+- Nginx configuration validation
+- System log analysis and root-cause investigation
+- Service outage simulation and recovery
+- HTTP connectivity testing
+- Technical incident documentation
 
 **Phase 3 — Linux Users & Permissions: Completed and verified.**
 
-Additional Linux administration work, including service troubleshooting, backups, and monitoring, is planned as part of the broader project.
+## Project Status
 
-## Key Takeaway
+### Completed Milestones
 
-This lab reinforced that secure Linux administration requires more than assigning permissions.
+**Phase 3 — Linux Users & Permissions: Completed and verified.**
 
-Effective access control depends on correctly configured identities, group membership, ownership, permissions, active process credentials, and verification through real-world testing.
+- Created and managed Linux user accounts and groups.
+- Configured shared directory permissions and ACL inheritance.
+- Verified authorized access and blocked unauthorized users.
+- Documented technical procedures and captured supporting evidence.
+
+**Phase 4 — Nginx Service Failure & Recovery: Completed and verified.**
+
+- Installed and configured the Nginx web server.
+- Reproduced a controlled outage using an invalid configuration directive.
+- Diagnosed the failure using `systemctl`, `journalctl`, and `nginx -t`.
+- Restored a known-good configuration backup.
+- Verified successful recovery with `HTTP/1.1 200 OK`.
+
+### Upcoming Milestones
+
+**Phase 5 — Automated Backups & Restoration:** Not started.
+
+**Phase 6 — System Monitoring:** Not started.
+
+### Current Project Focus
+
+Documenting the Nginx incident and publishing the supporting evidence to GitHub
