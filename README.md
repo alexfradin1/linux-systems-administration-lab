@@ -209,8 +209,6 @@ Simulated an Nginx web server outage caused by an invalid configuration directiv
 - HTTP connectivity testing
 - Technical incident documentation
 
-**Phase 3 — Linux Users & Permissions: Completed and verified.**
-
 ## Project Status
 
 ### Completed Milestones
